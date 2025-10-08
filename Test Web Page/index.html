@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <title>GeoCampus API test</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+</head>
+
+<body>
+
+    <h1>Test de l'API de GeoCampus</h1>
+
+    <div id="map" style="height: 100vh;"></div>
+
+    <script>
+
+        const map = L.map('map')
+                     .setView([7.417283519316341, 13.546677129528522], 17)
+                     .setMaxBounds(
+                        [
+                            [7.407825, 13.531775],
+                            [7.428114, 13.556880]
+                        ]);
+
+
+        fetch('http://localhost:5051/points')
+        .then(r => r.json())
+        .then(points => {
+            points.forEach(p => {
+            L.marker([p.latitude, p.longitude])
+            .addTo(map)
+            .bindTooltip(p.name, {permanent: true, direction: 'right', className: 'play-bold'})
+            .bindPopup("<img src='" + p.imageUrl + "' alt='Image infrastructure' style='width:300px;height:auto;'><br><b>" 
+                        + p.name + "</b><br><br>" + p.description);
+            });
+        });
+
+        L.tileLayer('http://localhost:5051/tiles/{z}/{x}/{y}.png', {
+            tileSize: 256,
+            maxZoom: 19,
+            minZoom: 17,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://www.linkedin.com/in/igor-rousgou-djanse-7a83a32b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">FleoRDI</a>'
+        }).addTo(map);
+        
+    </script>
+
+</body>
+
+</html>
