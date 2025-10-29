@@ -69,3 +69,4 @@ d:\Coding\HTML, CSS, JAVASCRIPT and ASP .Net\Projects\GeoCampus API\API\Geocampu
 d:\Coding\HTML, CSS, JAVASCRIPT and ASP .Net\Projects\GeoCampus API\API\Geocampus.Map.API\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
 d:\Coding\HTML, CSS, JAVASCRIPT and ASP .Net\Projects\GeoCampus API\API\Geocampus.Map.API\obj\Debug\net9.0\Geocampus.Map.API.csproj.AssemblyReference.cache
 d:\Coding\HTML, CSS, JAVASCRIPT and ASP .Net\Projects\GeoCampus API\API\Geocampus.Map.API\obj\Debug\net9.0\Geocampu.DC3210B7.Up2Date
+d:\Coding\HTML, CSS, JAVASCRIPT and ASP .Net\Projects\GeoCampus API\API\Geocampus.Map.API\obj\Debug\net9.0\Geocampus.Map.API.sourcelink.json

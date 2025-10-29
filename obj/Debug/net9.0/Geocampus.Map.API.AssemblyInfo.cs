@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Geocampus.Map.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+540158eb98b05ce2cb6d2af50d154c90dc839173")]
 [assembly: System.Reflection.AssemblyProductAttribute("Geocampus.Map.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Geocampus.Map.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

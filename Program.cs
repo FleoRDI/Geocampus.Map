@@ -27,9 +27,9 @@ SupaDataBase supa = new(new Client(url, key, options));
 
 var app = builder.Build();
 
-var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
+// var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
 
-app.Urls.Add($"http://0.0.0.0:{port}");
+// app.Urls.Add($"http://0.0.0.0:{port}");
 
 // Use CORS(Cross-Origin Request ) middleware
 app.UseCors("AllowSpecificOrigins");
@@ -52,7 +52,7 @@ app.MapGet("/points", async () =>
 });
 
 
-//Give map tiles from db
+//Give map tiles from mbtile
 app.MapGet("tiles/{z:int}/{x:int}/{y:int}.png", async (int z, int x, int y, HttpResponse response) =>
 {
     try
